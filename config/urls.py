@@ -35,9 +35,9 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('flor/', admin.site.urls),
 
-    path('empresas/', include('apps.categorias.urls', namespace='categorias')),
-    path('funcionarios/', include('apps.produtos.urls', namespace='produtos')),
-    path('funcionarios/', include('apps.usuarios.urls', namespace='usuarios')),
+    path('categorias/', include('apps.categorias.urls', namespace='categorias')),
+    path('produtos/', include('apps.produtos.urls', namespace='produtos')),
+    path('usuarios/', include('apps.usuarios.urls', namespace='usuarios')),
 
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
