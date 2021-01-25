@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from apps.categorias.models import Categorias
+from apps.usuarios.models import Usuarios
 
 
 class Produtos(models.Model):
@@ -9,3 +10,5 @@ class Produtos(models.Model):
     descricao = models.TextField()
     preco = models.DecimalField(max_digits=10, decimal_places=2)
     categorias = models.ManyToManyField(Categorias)
+    criado_por = models.ForeignKey(
+        Usuarios, on_delete=models.DO_NOTHING, blank=True, null=True, related_name='produtos_criado_por_usuarios')

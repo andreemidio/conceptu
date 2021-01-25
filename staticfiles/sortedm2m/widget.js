@@ -5,6 +5,7 @@ if (typeof jQuery === 'undefined') {
 (function ($) {
     $(function () {
         $('.sortedm2m-container').find('.sortedm2m-items').addClass('hide');
+
         function prepareUl(ul) {
             ul.addClass('sortedm2m');
             var checkboxes = ul.find('input[type=checkbox]');
@@ -25,7 +26,9 @@ if (typeof jQuery === 'undefined') {
                 }
 
                 labelFor = label.attr('for');
-                if (!labelFor) { return; }
+                if (!labelFor) {
+                    return;
+                }
                 id = labelFor.match(/^(.*)_\d+$/)[1];
                 name = id.replace(/^id_/, '');
             }
@@ -39,7 +42,7 @@ if (typeof jQuery === 'undefined') {
                 $('#' + id).val(values.join(','));
             };
             recalculate_value();
-            ul.on('change','input[type=checkbox]',recalculate_value);
+            ul.on('change', 'input[type=checkbox]', recalculate_value);
             ul.sortable({
                 axis: 'y',
                 //containment: 'parent',
@@ -62,12 +65,12 @@ if (typeof jQuery === 'undefined') {
         iterateUl();
 
         $('.sortedm2m-container .selector-filter input').each(function () {
-            $(this).bind('input', function() {
+            $(this).bind('input', function () {
                 var search = $(this).val().toLowerCase();
                 var $el = $(this).closest('.selector-filter');
-                var $container = $el.siblings('.sortedm2m-items').each(function() {
+                var $container = $el.siblings('.sortedm2m-items').each(function () {
                     // walk over each child list el and do name comparisons
-                    $(this).children().each(function() {
+                    $(this).children().each(function () {
                         var curr = $(this).find('label').text().toLowerCase();
                         if (curr.indexOf(search) === -1) {
                             $(this).css('display', 'none');
