@@ -9,9 +9,19 @@ class PostCategoriaSerializers(serializers.ModelSerializer):
     criado_por = serializers.HiddenField(
         default=serializers.CurrentUserDefault()
     )
+
     class Meta:
         model = Categorias
         fields = ('nome_categoria', 'criado_por')
+
+
+class RetrieveCategoriaSerializers(serializers.ModelSerializer):
+    nome_categoria = serializers.CharField(required=True)
+    criado_por = GetUsuariosSerializers()
+
+    class Meta:
+        model = Categorias
+        fields = ('id', 'nome_categoria', 'criado_por')
 
 
 class ListCategoriaSerializers(serializers.ModelSerializer):
@@ -20,4 +30,13 @@ class ListCategoriaSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = Categorias
-        fields = ('nome_categoria', 'criado_por')
+        fields = ('id', 'nome_categoria', 'criado_por')
+
+
+class DeleteCategoriaSerializers(serializers.ModelSerializer):
+    nome_categoria = serializers.CharField(required=True)
+    criado_por = GetUsuariosSerializers()
+
+    class Meta:
+        model = Categorias
+        fields = ('id', 'nome_categoria', 'criado_por')
