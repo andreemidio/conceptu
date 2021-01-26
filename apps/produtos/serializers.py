@@ -7,7 +7,7 @@ from apps.usuarios.serializers import GetUsuariosSerializers
 
 class PostProdutosSerializers(serializers.ModelSerializer):
     criado_por = serializers.HiddenField(default=serializers.CurrentUserDefault())
-    categorias = PostCategoriaProdutosSerializers(many=True)
+    # categorias = PostCategoriaProdutosSerializers(many=True)
 
     class Meta:
         model = Produtos
