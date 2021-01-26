@@ -35,7 +35,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('flor/', admin.site.urls),
-    path('api-token-auth/', views.obtain_auth_token),
+    # path('api-token-auth/', views.obtain_auth_token),
 
     path('categorias/', include('apps.categorias.urls', namespace='categorias')),
     path('produtos/', include('apps.produtos.urls', namespace='produtos')),
