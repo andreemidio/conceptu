@@ -1,4 +1,4 @@
-from rest_framework import mixins
+from rest_framework import mixins, permissions
 from rest_framework.viewsets import GenericViewSet
 
 from apps.usuarios.models import Usuarios
@@ -7,6 +7,7 @@ from apps.usuarios.serializers import PostUsuariosSerializers, GetUsuariosSerial
 
 class PostUsuariosViewSets(mixins.CreateModelMixin, GenericViewSet):
     serializer_class = PostUsuariosSerializers
+    permission_classes = (permissions.AllowAny,)
 
 
 class ListUsuariosViewSets(mixins.ListModelMixin, GenericViewSet):
