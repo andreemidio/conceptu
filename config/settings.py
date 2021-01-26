@@ -37,8 +37,12 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
 AUTH_USER_MODEL = 'usuarios.Usuarios'
 
-# Application definition
+# LOGIN_URL = ''
+# LOGOUT_URL = ''
+# LOGIN_REDIRECT_URL = ''
+# LOGOUT_REDIRECT_URL = ''
 
+# Application definition
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -149,3 +153,51 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 APPEND_SLASH = True
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+
+    "DATE_INPUT_FORMATS": ["%d/%m/%Y"],
+
+    # classes de permissão
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ),
+
+    # Classes de autenticação
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+
+    'DEFAULT_RENDERER_CLASSES': (
+
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ),
+
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    },
+}
+
+REDOC_SETTINGS = {
+    'LAZY_RENDERING': False,
+}

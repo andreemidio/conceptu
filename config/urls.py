@@ -19,6 +19,7 @@ from django.urls import path, include
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+from rest_framework.authtoken import views
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -29,11 +30,12 @@ schema_view = get_schema_view(
         license=openapi.License(name="No License"),
     ),
     public=True,
-    permission_classes=(permissions.AllowAny,),
+    permission_classes=(permissions.IsAuthenticated,),
 )
 
 urlpatterns = [
     path('flor/', admin.site.urls),
+    path('api-token-auth/', views.obtain_auth_token),
 
     path('categorias/', include('apps.categorias.urls', namespace='categorias')),
     path('produtos/', include('apps.produtos.urls', namespace='produtos')),
