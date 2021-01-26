@@ -30,11 +30,11 @@ schema_view = get_schema_view(
         license=openapi.License(name="No License"),
     ),
     public=True,
-    permission_classes=(permissions.IsAuthenticated,),
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = [
-    path('flor/', admin.site.urls),
+    path('lotus/', admin.site.urls),
     # path('api-token-auth/', views.obtain_auth_token),
 
     path('categorias/', include('apps.categorias.urls', namespace='categorias')),
