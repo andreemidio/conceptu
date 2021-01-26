@@ -52,13 +52,9 @@ class RetrieveUsuariosSerializers(serializers.ModelSerializer):
 
 
 class UpdateUsuariosSerializers(serializers.ModelSerializer):
-    id = serializers.HiddenField(
-        default=serializers.CurrentUserDefault()
-    )
     nome_sobrenome = serializers.CharField(required=True)
-    cpf = serializers.CharField(required=True)
     email = serializers.EmailField(required=True)
 
     class Meta:
         model = Usuarios
-        fields = ('id', 'nome_sobrenome', 'email', 'cpf')
+        fields = ('id', 'nome_sobrenome', 'email')
