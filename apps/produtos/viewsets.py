@@ -2,7 +2,7 @@ from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 
 from apps.produtos.models import Produtos
-from apps.produtos.serializers import PostProdutosSerializers, ListProdutosSerializers
+from apps.produtos.serializers import PostProdutosSerializers, ListProdutosSerializers, RetriveProdutosSerializers
 
 
 class PostProdutosViewSets(mixins.CreateModelMixin, GenericViewSet):
@@ -16,7 +16,7 @@ class ListProdutosViewSets(mixins.ListModelMixin, GenericViewSet):
 
 
 class RetriveProdutosViewSets(mixins.RetrieveModelMixin, GenericViewSet):
-    serializer_class = ListProdutosSerializers
+    serializer_class = RetriveProdutosSerializers
     queryset = Produtos.objects.all()
 
 

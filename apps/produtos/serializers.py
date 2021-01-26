@@ -19,8 +19,16 @@ class PostProdutosSerializers(serializers.ModelSerializer):
 
 class ListProdutosSerializers(serializers.ModelSerializer):
     categorias = ListCategoriaProdutosSerializers(many=True)
+
+    class Meta:
+        model = Produtos
+        fields = ('id', 'nome', 'descricao', 'preco', 'categorias')
+
+
+class RetriveProdutosSerializers(serializers.ModelSerializer):
+    categorias = ListCategoriaProdutosSerializers(many=True)
     criado_por = GetUsuariosSerializers()
 
     class Meta:
         model = Produtos
-        fields = '__all__'
+        fields = ('id', 'nome', 'descricao', 'preco', 'categorias', 'criado_por')
