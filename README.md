@@ -39,9 +39,6 @@ aplicação via apenas via pull request e usando conceitos que o Git Flow trás.
 
 Todo esse ambiente eu criei e produzi com o *Pipenv* para isolar ao máximo as dependências do projeto.
 
-Os modelos foram criados, sendo que a relação fica disposta em empresas, para tão é necessário criar primeiro o usuário
-que deseja, e depois criar a empresa, relacionando seus funcionários
-
 Para acessar a aplicação na raiz acesse [conceptu-teste](https://conceptu-teste.herokuapp.com/)
 
 Disponibilizei uma documentação auxiliar para facilitar o entendimento que está
