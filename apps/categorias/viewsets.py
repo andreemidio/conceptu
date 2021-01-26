@@ -2,7 +2,8 @@ from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 
 from apps.categorias.models import Categorias
-from apps.categorias.serializers import ListCategoriaSerializers
+from apps.categorias.serializers import ListCategoriaSerializers, RetrieveCategoriaSerializers, \
+    DeleteCategoriaSerializers
 from apps.categorias.serializers import PostCategoriaSerializers
 
 
@@ -16,7 +17,8 @@ class ListCategoriasViewSets(mixins.ListModelMixin, GenericViewSet):
 
 
 class GetCategoriasViewSets(mixins.RetrieveModelMixin, GenericViewSet):
-    pass
+    serializer_class = RetrieveCategoriaSerializers
+    queryset = Categorias.objects.all()
 
 
 class PutCategoriasViewSets(mixins.UpdateModelMixin, GenericViewSet):
@@ -24,4 +26,5 @@ class PutCategoriasViewSets(mixins.UpdateModelMixin, GenericViewSet):
 
 
 class DeleteCategoriasViewSets(mixins.DestroyModelMixin, GenericViewSet):
-    pass
+    serializer_class = DeleteCategoriaSerializers
+    queryset = Categorias.objects.all()
