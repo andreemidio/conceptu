@@ -28,10 +28,6 @@ Usando o método que define *GET* e *POST* separadamente, deixando o código mai
 conceito que tentei utilizar é usar na declaração das váriaveis o uso do verbo de ação em inglês e sua função em seguida
 para facilitar a leitura da classe.
 
-Sobre teste unitário, eu estou estudando esse tópico importante e como ainda não tenho uma boa dicção nessa técnica
-achei por bem não incluir, entretanto, como já trabalho com *API's*, inclui a
-ferramenta [ScanAPI](https://pypi.org/project/scanapi), que é usada para criar testes de integração para os *endpoints*.
-
 Caso baixe o projeto e queira executar o comando é
 
 ```

@@ -9,6 +9,7 @@ from apps.categorias.serializers import PostCategoriaSerializers
 
 class PostCategoriaViewSets(mixins.CreateModelMixin, GenericViewSet):
     serializer_class = PostCategoriaSerializers
+    queryset = Categorias.objects.all()
 
 
 class ListCategoriasViewSets(mixins.ListModelMixin, GenericViewSet):
