@@ -32,3 +32,9 @@ class RetriveProdutosSerializers(serializers.ModelSerializer):
     class Meta:
         model = Produtos
         fields = ('id', 'nome', 'descricao', 'preco', 'categorias', 'criado_por')
+
+
+class UpdateProdutosSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Produtos
+        fields = ('id', 'nome', 'descricao', 'preco', 'categorias')
