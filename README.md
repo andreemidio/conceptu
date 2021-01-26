@@ -50,6 +50,8 @@ e [Redoc](https://conceptu-teste.herokuapp.com/redoc/)
 
 Caso queira acessar o [banco de dados](https://conceptu-teste.herokuapp.com/lotus/)  use:
 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/ce6593f96dd5aec19237)
+
 ```
  - Login : andre.emidio@conceptu.com
  - Senha : sWVWL0$L#&Cf0
