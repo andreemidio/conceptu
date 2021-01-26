@@ -10,6 +10,7 @@ class PostProdutosSerializers(serializers.ModelSerializer):
     # descricao = serializers.CharField(required=True)
     # preco = serializers.DecimalField(max_digits=10, decimal_places=2)
     criado_por = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    categorias =  serializers.UUIDField(required=False)
 
     class Meta:
         model = Produtos
