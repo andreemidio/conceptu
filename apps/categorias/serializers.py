@@ -33,6 +33,15 @@ class ListCategoriaSerializers(serializers.ModelSerializer):
         fields = ('id', 'nome_categoria', 'criado_por')
 
 
+
+class PutCategoriaSerializers(serializers.ModelSerializer):
+    nome_categoria = serializers.CharField(required=True)
+
+    class Meta:
+        model = Categorias
+        fields = ('id', 'nome_categoria', 'criado_por')
+
+
 class DeleteCategoriaSerializers(serializers.ModelSerializer):
     nome_categoria = serializers.CharField(required=True)
     criado_por = GetUsuariosSerializers()
@@ -40,3 +49,10 @@ class DeleteCategoriaSerializers(serializers.ModelSerializer):
     class Meta:
         model = Categorias
         fields = ('id', 'nome_categoria', 'criado_por')
+
+
+class ListCategoriaProdutosSerializers(serializers.ModelSerializer):
+    nome_categoria = serializers.CharField(required=True)
+    class Meta:
+        model = Categorias
+        fields = ('id', 'nome_categoria')

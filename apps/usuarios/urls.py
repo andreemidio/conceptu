@@ -7,6 +7,9 @@ app_name = 'usuarios'
 
 router = routers.DefaultRouter()
 router.register(r'cadastrar-usuarios', PostUsuariosViewSets, basename='cadastrar-usuarios')
+router.register(r'listar-usuarios', PostUsuariosViewSets, basename='cadastrar-usuarios')
+router.register(r'detalhes-usuario', PostUsuariosViewSets, basename='cadastrar-usuarios')
+router.register(r'deletar-usuario', PostUsuariosViewSets, basename='cadastrar-usuarios')
 
 urlpatterns = [
     path(r'', include(router.urls)),
