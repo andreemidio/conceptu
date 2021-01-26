@@ -31,11 +31,11 @@ para facilitar a leitura da classe.
 Para facilitar o deploy da aplicação, no github vá em actions, coloquei um CI para o Heroku para que eu faça o deploy da
 aplicação via apenas via pull request e usando conceitos que o Git Flow trás.
 
-Todo esse ambiente eu criei e produzi com o *Pipenv* para isolar ao máximo as dependências do projeto.
+Todo esse ambiente eu criei e produzi com o [*Pipenv*](https://pipenv.pypa.io/en/latest/) para isolar ao máximo as dependências do projeto.
 
 Para acessar a aplicação na raiz acesse [conceptu-teste](https://conceptu-teste.herokuapp.com/)
 
-
+Para cadastrar um produto , há uma rota especifica para isso, caso precise que seja cadastrado com categoria é necessario mencionar os ID's da categoria desejada
 
 Disponibilizei uma documentação auxiliar para facilitar o entendimento que está
 em [Swagger](https://conceptu-teste.herokuapp.com/swagger/)

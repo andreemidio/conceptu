@@ -14,6 +14,12 @@ class PostCategoriaSerializers(serializers.ModelSerializer):
         model = Categorias
         fields = ('nome_categoria', 'criado_por')
 
+class PostCategoriaProdutosSerializers(serializers.ModelSerializer):
+    id = serializers.UUIDField(required=False)
+
+    class Meta:
+        model = Categorias
+        fields = ('id',)
 
 class RetrieveCategoriaSerializers(serializers.ModelSerializer):
     nome_categoria = serializers.CharField(required=True)
