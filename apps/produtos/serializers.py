@@ -1,15 +1,13 @@
 from rest_framework import serializers
 
-from apps.categorias.serializers import ListCategoriaProdutosSerializers
+from apps.categorias.serializers import ListCategoriaProdutosSerializers, PostCategoriaProdutosSerializers
 from apps.produtos.models import Produtos
 from apps.usuarios.serializers import GetUsuariosSerializers
 
 
 class PostProdutosSerializers(serializers.ModelSerializer):
-    # nome = serializers.CharField(required=True)
-    # descricao = serializers.CharField(required=True)
-    # preco = serializers.DecimalField(max_digits=10, decimal_places=2)
     criado_por = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    # categorias = PostCategoriaProdutosSerializers(many=True)
 
     class Meta:
         model = Produtos

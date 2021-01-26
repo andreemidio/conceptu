@@ -28,21 +28,14 @@ Usando o método que define *GET* e *POST* separadamente, deixando o código mai
 conceito que tentei utilizar é usar na declaração das váriaveis o uso do verbo de ação em inglês e sua função em seguida
 para facilitar a leitura da classe.
 
-Caso baixe o projeto e queira executar o comando é
-
-```
-scanapi run scanapi/company_hero.yaml
-```
-
 Para facilitar o deploy da aplicação, no github vá em actions, coloquei um CI para o Heroku para que eu faça o deploy da
 aplicação via apenas via pull request e usando conceitos que o Git Flow trás.
 
-Todo esse ambiente eu criei e produzi com o *Pipenv* para isolar ao máximo as dependências do projeto.
-
-Os modelos foram criados, sendo que a relação fica disposta em empresas, para tão é necessário criar primeiro o usuário
-que deseja, e depois criar a empresa, relacionando seus funcionários
+Todo esse ambiente eu criei e produzi com o [*Pipenv*](https://pipenv.pypa.io/en/latest/) para isolar ao máximo as dependências do projeto.
 
 Para acessar a aplicação na raiz acesse [conceptu-teste](https://conceptu-teste.herokuapp.com/)
+
+Para cadastrar um produto , há uma rota especifica para isso, caso precise que seja cadastrado com categoria é necessario mencionar os ID's da categoria desejada
 
 Disponibilizei uma documentação auxiliar para facilitar o entendimento que está
 em [Swagger](https://conceptu-teste.herokuapp.com/swagger/)
